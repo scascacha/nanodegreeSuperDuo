@@ -40,7 +40,7 @@ public class AddBook extends Fragment implements LoaderManager.LoaderCallbacks<C
     private String mScanFormat = "Format:";
     private String mScanContents = "Contents:";
 
-
+    private Toast mToast;
 
     public AddBook(){
     }
@@ -78,7 +78,11 @@ public class AddBook extends Fragment implements LoaderManager.LoaderCallbacks<C
                     ean="978"+ean;
                 }
                 if(ean.length()<13){
-                    clearFields();
+                    if (mToast != null) {
+                        mToast.cancel();
+                    }
+                    mToast = Toast.makeText(getActivity(),R.string.input_hint,Toast.LENGTH_SHORT);
+                    mToast.show();
                     return;
                 }
                 //Once we have an ISBN, start a book intent
