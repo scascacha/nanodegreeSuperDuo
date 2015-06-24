@@ -5,6 +5,7 @@
     <!-- Menu Items -->
     <string name="books">List of Books</string>
     <string name="scan">Scan/Add a Book</string>
+    <string name="scan_isbn">Scan the ISBN BarCode</string>
     <string name="about">About this App</string>
 
     <string name="navigation_drawer_open" >Open navigation drawer</string>
